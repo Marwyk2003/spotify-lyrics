@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Bulma for Spotify</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css"
+    />
+  </head>
+  <body>
+    <section class="section">
+      <div class="columns">
+        <div class="column is-5 is-offset-2">
+          <div class="box">
+            <div class="block">
+              <h1 class="title">{{title}}</h1>
+              <p class="subtitle">{{artists}}</p>
+            </div>
+            <div class="content">
+              {% for x in content %}
+              <p>
+                {% for y in x %} {{ y }} <br />
+                {% endfor %}
+              </p>
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+        <div class="column is-3">
+          <div class="box">
+            <div class="block">
+              <div class="is-flex is-justify-content-center">
+                <figure class="image is-128">
+                  <img src="{{image}}" />
+                </figure>
+              </div>
+            </div>
+            <div class="buttons hs-addons is-centered">
+              <button class="button is-left">&lt</button>
+              <button class="button is-centered">=</button>
+              <button class="button is-right">&gt</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
